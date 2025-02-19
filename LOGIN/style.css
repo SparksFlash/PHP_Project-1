@@ -5,8 +5,9 @@
     font-family:"poppins",sans-serif;
 }
 body{
-    background-color: #c9d6ff;
-    background:linear-gradient(to right,#e2e2e2,#c9d6ff);
+    /* background-color: #c9d6ff;
+    background:linear-gradient(to right,#e2e2e2,#c9d6ff); */
+    background:white;
 }
 .container{
     background:#fff;
@@ -14,57 +15,74 @@ body{
     padding:1.5rem;
     margin:50px auto;
     border-radius:10px;
-    box-shadow:0 20px 35px rgba(0,0,1,0.9);
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.6);
 }
 form{
     margin:0 2rem;
 }
 .form-title{
     font-size:1.5rem;
-    font-weight:bold;
+    font-weight:700;
     text-align:center;
     padding:1.3rem;
     margin-bottom:0.4rem;
 }
 input{
+    flex:10;
     color:inherit;
     width:100%;
     background-color:transparent;
     border:none;
-    border-bottom:1px solid #757575;
-    padding-left:1.5rem;
     font-size:15px;
+    padding:0 0.4em;
+    border-left:solid 1px hsla(0, 0%, 0%, 0.4)
+}
+input:focus{
+    border-left:solid 1px hsla(240, 73%, 71%, 1);
+
 }
 .input-group{
     padding:1% 0;
     position:relative;
+   background-color:hsla(227, 63%, 18%, 0.07);
+margin:1em auto;
+border-radius:12px;
+display:flex;
+padding:0.7em 0.1em;
+
+}
+.error{
+    position:absolute;
+    left:2em;
+    bottom:-1em;
+}
+.error p{
+    color:red;
+    font-weight:500;
+    text-align:center;
+    font-size:14px;
+}
+.input-group:focus-within{
+    border:1.5px solid rgb(125,125,235);
 
 }
 .input-group i{
-    position:absolute;
+    flex:1;
     color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.input-group:focus-within i{
+    color:rgb(125,125,235);
+}
+.input-group.password i:first-child{
+    flex:1.1;
 }
 input:focus{
-    background-color: transparent;
-    outline:transparent;
-    border-bottom:2px solid hsl(327,90%,28%);
+    outline:none;
 }
-input::placeholder{
-    color:transparent;
-}
-label{
-    color:#757575;
-    position:relative;
-    left:1.2em;
-    top:-1.3em;
-    cursor:auto;
-    transition:0.3s ease all;
-}
-input:focus~label,input:not(:placeholder-shown)~label{
-    top:-3em;
-    color:hsl(327,90%,28%);
-    font-size:15px;
-}
+
 .recover{
     text-align:right;
     font-size:1rem;
@@ -81,22 +99,26 @@ input:focus~label,input:not(:placeholder-shown)~label{
 }
 .btn{
     font-size:1.1rem;
-    padding:8px 0;
-    border-radius:5px;
+    padding:0.6em 0;
+    border-radius:10px;
     outline:none;
     border:none;
     width:100%;
     background:rgb(125,125,235);
-    color:white;
+    color:black;
     cursor:pointer;
     transition:0.9s;
+    margin-top:0.4em;
+    font-weight:600;
 }
 .btn:hover{
     background:#07001f;
+    color:white;
 }
 .or{
     font-size:1.1rem;
-    margin-top:0.5rem;
+    margin-top:1rem;
+    margin-bottom:1rem;
     text-align:center;
 }
 .icons{
@@ -134,4 +156,45 @@ button{
 button:hover{
     text-decoration:underline;
     color:blue;
+}
+.error-main{
+background-color:brown;
+padding:0.5em 1em;
+border-radius:12px;
+width:80%;
+margin:0 auto;
+}
+.error-main p{
+color:white;
+text-align:center;
+}
+.user-details{
+    margin-top:5em;
+    font-size:1.5em;
+    font-weight:400;
+}
+.user-details p{
+    margin-bottom:0.5em;
+    text-align:center;
+}
+.user-details p:first-child{
+    text-decoration:underline;
+    margin-bottom:2em;
+    font-weight:600;
+}
+.user-details a{
+    display: block; 
+    text-align: center; 
+    text-decoration-color:rgb(125,125,235);
+    color:rgb(125,125,235);
+    transition:5ms;
+}
+.user-details a:hover{
+color:blue;
+text-decoration-color:blue;
+}
+@media screen and (max-width: 767px) {
+.container{
+    box-shadow:unset;
+}
 }
